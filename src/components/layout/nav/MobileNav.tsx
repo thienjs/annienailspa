@@ -8,31 +8,31 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import useDelayedRender from 'use-delayed-render';
 import styles from './mobile-menu.module.css';
-export interface IMobileNavProps {}
+
 
 const items = [
-  { name: 'Home', url: '/', icon: <FiHome aria-hidden className="mx-2" /> },
+  { name: 'Home', url: '/', icon: <FiHome aria-hidden className='mx-2' /> },
   {
     name: 'Guestbook',
     url: '/guestbook',
-    icon: <FiEdit3 aria-hidden className="mx-2" />,
-    delay: '150ms'
+    icon: <FiEdit3 aria-hidden className='mx-2' />,
+    delay: '150ms',
   },
   {
-    name: 'Projects',
+    name: 'Products',
     url: '/projects',
-    icon: <FiStar aria-hidden className="mx-2" />,
-    delay: '175ms'
+    icon: <FiStar aria-hidden className='mx-2' />,
+    delay: '175ms',
   },
   {
-    name: 'blog',
-    url: '/blog',
-    icon: <FiAward aria-hidden className="mx-2" />,
-    delay: '200ms'
-  }
+    name: 'Price',
+    url: '/price',
+    icon: <FiAward aria-hidden className='mx-2' />,
+    delay: '200ms',
+  },
 ];
 
-export function MobileNav(props: IMobileNavProps) {
+export function MobileNav() {
   const router = useRouter();
   const path = router.asPath;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -54,7 +54,7 @@ export function MobileNav(props: IMobileNavProps) {
           className={clsx(
             'mx-4 flex w-auto items-center rounded-md py-3  transition-all',
             path === item.url
-              ? 'bg-gray-200 font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-200 '
+              ? 'bg-gray-200 font-semibold text-gray-800 dark:bg-zinc-800 dark:text-gray-200 '
               : 'font-normal text-gray-600 dark:text-gray-400'
           )}
         >
@@ -75,9 +75,9 @@ export function MobileNav(props: IMobileNavProps) {
         </Dialog.Trigger>
       </Toolbar.Button>
       <Dialog.Portal>
-        <Dialog.Overlay className="absolute inset-0 bg-gray-800 bg-opacity-75 " />
+        <Dialog.Overlay className="absolute inset-0 bg-zinc-800 bg-opacity-75 " />
         <Dialog.Content className="fixed top-0 bottom-0 left-0 w-72">
-          <div className="absolute inset-0 bg-gray-100 dark:bg-gray-900 ">
+          <div className="absolute inset-0 bg-gray-100 dark:bg-zinc-900 ">
             {isMenuMounted ? (
               <ul
                 className={clsx(

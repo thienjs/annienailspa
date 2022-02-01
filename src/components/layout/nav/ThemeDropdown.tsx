@@ -3,7 +3,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useTheme } from 'next-themes';
 import { FiMonitor, FiMoon, FiSun } from 'react-icons/fi';
 import * as Toolbar from '@radix-ui/react-toolbar';
-export interface IThemeDropdownProps {}
+
 
 const states = [
   { name: 'light', icon: <FiSun aria-hidden className="mx-2" /> },
@@ -11,7 +11,7 @@ const states = [
   { name: 'system', icon: <FiMonitor aria-hidden className="mx-2" /> }
 ];
 
-export function ThemeDropdown(props: IThemeDropdownProps) {
+export function ThemeDropdown() {
   const { theme, setTheme } = useTheme();
 
   const radioItems = states.map(({ name, icon }) => (

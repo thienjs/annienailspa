@@ -4,9 +4,9 @@ import { NavItem } from './NavItem';
 import { ThemeDropdown } from './ThemeDropdown';
 import { MobileNav } from './MobileNav';
 import * as Toolbar from '@radix-ui/react-toolbar';
-export interface INavbarProps {}
 
-export function Navbar(props: INavbarProps) {
+
+export function Navbar() {
   return (
     <Toolbar.Root>
       <div className='flex flex-col justify-center px-8 dark:bg-zinc-800 bg-gray-50'>
