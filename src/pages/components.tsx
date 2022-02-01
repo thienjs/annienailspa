@@ -2,13 +2,13 @@
 import clsx from 'clsx';
 import * as React from 'react';
 
-import Button from '@/components/buttons/Button';
+import Button from '@/components/common/buttons/Button';
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import PrimaryLink from '@/components/links/PrimaryLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
+import ArrowLink from '@/components/common/links/ArrowLink';
+import ButtonLink from '@/components/common/links/ButtonLink';
+import PrimaryLink from '@/components/common/links/PrimaryLink';
+import UnderlineLink from '@/components/common/links/UnderlineLink';
+import UnstyledLink from '@/components/common/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 

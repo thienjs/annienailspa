@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar } from '@/components/layout/nav';
+import { Navbar } from '@/components/common/nav';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 export interface ILayoutProps {

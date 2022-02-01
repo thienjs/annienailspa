@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Link from '@/components/links/Link';
+import Link from '@/components/common/links/Link';
 import headerNavLinks from '@/data/headerNavLinks';
 
 const MobileNav = () => {
