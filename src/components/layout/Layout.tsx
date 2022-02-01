@@ -1,56 +1,55 @@
-import siteMetadata from '@/data/siteMetadata';
-import headerNavLinks from '@/data/headerNavLinks';
-
-import Link from '@/components/links/Link';
-import Section from './Section';
-import Footer from './Footer';
-import MobileNav from './MobileNav';
-import ThemeSwitch from '@/components/ThemeSwitch';
-import { ReactNode } from 'react';
-
-interface Props {
-  children: ReactNode;
+import * as React from 'react';
+import { Navbar } from '@/components/layout/nav';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+export interface ILayoutProps {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
-const Layout = ({ children }: Props) => {
+export function Layout({ children, ...customMeta }: ILayoutProps) {
+  const router = useRouter();
+  const meta = {
+    title: 'Annie Nails Spa',
+    description: `Annie Nails Spa`,
+    image: '',
+    type: 'website',
+    ...customMeta,
+  };
+
   return (
-    <Section>
-      <div className=''>
-        <header className='flex items-center justify-between py-10'>
-          <div className=''>
-            <Link href='/' aria-label='Annie Nail Spa'>
-              <div className='flex items-center justify-between'>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className='font-semibold h-6 hidden text-2xl sm:block'>
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
-              </div>
-            </Link>
-          </div>
-          <div className='flex items-center leading-5'>
-            <div className='hidden sm:block'>
-              {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className='font-medium p-1  sm:p-4 '
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </div>
-            <ThemeSwitch />
-            <MobileNav />
-          </div>
-        </header>
-        <main className=''>{children}</main>
-        <Footer />
-      </div>
-    </Section>
+    <>
+      <Head>
+        <title>{meta.title}</title>
+        <meta name='robots' content='follow, index' />
+        <meta content={meta.description} name='description' />
+        <meta
+          property='og:url'
+          content={`https://annienailspa.com${router.asPath}`}
+        />
+        <link
+          rel='canonical'
+          href={`https://annienailspa.com${router.asPath}`}
+        />
+        <meta property='og:type' content={meta.type} />
+        <meta property='og:site_name' content='Annie Nails Spa' />
+        <meta property='og:description' content={meta.description} />
+        <meta property='og:title' content={meta.title} />
+        <meta property='og:image' content={meta.image} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@leeerob' />
+        <meta name='twitter:title' content={meta.title} />
+        <meta name='twitter:description' content={meta.description} />
+        <meta name='twitter:image' content={meta.image} />
+      </Head>
+      <Navbar />
+      <main className='dark:bg-zinc-800 bg-gray-50 flex flex-col justify-center mb-8 px-8 '>
+        {children}
+      </main>
+    </>
   );
-};
+}
 
 export default Layout;
