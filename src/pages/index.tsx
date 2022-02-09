@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/common/links/ArrowLink';
-import { Link } from '@/components/common/links';
+import Link  from '@/components/common/links/Link';
 import UnderlineLink from '@/components/common/links/UnderlineLink';
 import UnstyledLink from '@/components/common/links/UnstyledLink';
 import Seo from '@/components/Seo';
