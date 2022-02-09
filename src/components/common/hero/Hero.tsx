@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@/components/common/links';
+import Link  from '@/components/common/links/Link';
 import { IconLink } from '../iconlink';
 import { FiGithub, FiInstagram, FiTwitter, FiMail, FiFacebook } from 'react-icons/fi';
 
