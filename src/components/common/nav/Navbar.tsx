@@ -19,7 +19,7 @@ export function Navbar() {
             <NavItem href='/' text='Home' />
             <NavItem href='/about' text='About' />
             <NavItem href='/price' text='Prices' />
-            <NavItem href='/products' text='products' />
+            <NavItem href='/products' text='Products' />
           </div>
 
           <ThemeDropdown />

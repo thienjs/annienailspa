@@ -13,20 +13,20 @@ import styles from './mobile-menu.module.css';
 const items = [
   { name: 'Home', url: '/', icon: <FiHome aria-hidden className='mx-2' /> },
   {
-    name: 'Guestbook',
-    url: '/guestbook',
+    name: 'About',
+    url: '/about',
     icon: <FiEdit3 aria-hidden className='mx-2' />,
     delay: '150ms',
   },
   {
     name: 'Products',
-    url: '/projects',
+    url: '/products',
     icon: <FiStar aria-hidden className='mx-2' />,
     delay: '175ms',
   },
   {
-    name: 'Price',
-    url: '/price',
+    name: 'Prices',
+    url: '/prices',
     icon: <FiAward aria-hidden className='mx-2' />,
     delay: '200ms',
   },

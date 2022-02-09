@@ -45,7 +45,7 @@ export function Layout({ children, ...customMeta }: ILayoutProps) {
         <meta name='twitter:image' content={meta.image} />
       </Head>
       <Navbar />
-      <main className='dark:bg-zinc-800 bg-gray-50 flex flex-col justify-center mb-8 px-8 '>
+      <main className='dark:bg-zinc-800 bg-gray-50 flex flex-col justify-center mb-8 px-8 min-h-screen'>
         {children}
       </main>
     </>
