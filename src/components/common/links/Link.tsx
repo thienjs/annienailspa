@@ -10,7 +10,7 @@ export interface ILinkProps
   children: React.ReactNode;
 }
 
-export function Link({ href, children, className, ...rest }: ILinkProps) {
+export default function Link({ href, children, className, ...rest }: ILinkProps) {
   const className_ =
     'underline decoration-dashed underline-offset-4 hover:text-gray-800 dark:hover:text-gray-200 font-bold transition-all';
   if (href.startsWith('https://')) {
